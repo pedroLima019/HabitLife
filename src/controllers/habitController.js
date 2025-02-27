@@ -72,3 +72,20 @@ export async function getHabits(req, res) {
     res.status(400).json({ error: error.message });
   }
 }
+
+export async function deleteHabit(req, res) {
+  try {
+    const { id } = req.params;
+    const { userId } = req.user;
+
+    const habit = await prisma.habit.findUnique({ where: { id } });
+    if (!habit || habit.userId !== userId) {
+      return res.status(404).json({ error: "Hábito não encontrado" });
+    }
+
+    await prisma.habit.delete({ where: { id } });
+    res.json({ message: "Hábito deletado com sucesso" });
+  } catch (error) {
+    res.status(500).json({ error: "Erro ao deletar o hábito" });
+  }
+}

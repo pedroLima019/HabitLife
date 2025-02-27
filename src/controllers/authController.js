@@ -79,3 +79,16 @@ export async function userUpdate(req, res) {
     res.status(400).json({ error: error.message });
   }
 }
+
+export async function deleteUser(req, res) {
+  try {
+    const { userId } = req.user;
+
+    await prisma.habit.deleteMany({ where: { userId } }); // Deletar hábitos do usuário
+    await prisma.user.delete({ where: { id: userId } });
+
+    res.json({ message: "Conta deletada com sucesso." });
+  } catch (error) {
+    res.status(500).json({ error: "Erro ao deletar a conta." });
+  }
+}
