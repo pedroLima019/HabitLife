@@ -3,10 +3,6 @@ const prisma = new PrismaClient();
 
 export async function createHabit(req, res) {
   try {
-    console.log("Recebendo requisição para criar hábito...");
-    console.log("req.body:", req.body);
-    console.log("Usuário autenticado:", req.user);
-
     const { name, description, periodicity, recommendedTime, category } =
       req.body;
 
