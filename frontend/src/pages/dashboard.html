@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/output.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <script src="../js/sidebar.js" defer></script>
+    <title>Dashboard</title>
+  </head>
+
+  <body class="bg-neutral-700">
+    <nav class="flex justify-between items-center w-full p-5 bg-zinc-900">
+      <div class="logo">
+        <h1 class="font-poppins font-semibold text-lg text-white">HabitLife</h1>
+      </div>
+
+      <button id="menu-btn" class="text-white text-3xl md:hidden">
+        <span id="menu-icon" class="material-icons">menu</span>
+      </button>
+      <ul class="hidden md:flex items-center space-x-4">
+        <li class="font-poppins text-sm text-white">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="font-poppins text-sm text-white">
+          <a href="#">Histórico</a>
+        </li>
+        <li class="font-poppins text-sm text-white">
+          <a href="#">Configurações</a>
+        </li>
+      </ul>
+      <div class="hidden md:flex items-center">
+        <img
+          id="mobile-user-avatar"
+          src="/frontend/public/assets/Avatar.jpg"
+          alt="Avatar"
+          class="flex w-10 h-10 rounded-full border border-white"
+        />
+        <span class="material-icons text-white p-2">logout</span>
+      </div>
+    </nav>
+
+    <div
+      id="mobile-menu"
+      class="absolute top-16 left-0 w-full h-screen bg-zinc-900 text-white flex flex-col space-y-4 p-4 opacity-0 pointer-events-none transform -translate-y-5 transition-all duration-500 ease-in-out md:hidden"
+    >
+      <a href="#" class="font-medium font-poppins text-xs">Dashboard</a>
+      <a href="#" class="font-medium font-poppins text-xs">Histórico</a>
+      <a href="#" class="font-medium font-poppins text-xs">Configurações</a>
+
+      <div class="flex items-center">
+        <img
+          id="mobile-user-avatar"
+          src="/frontend/public/assets/Avatar.jpg"
+          alt="Avatar"
+          class="flex w-10 h-10 rounded-full border border-white"
+        />
+        <span class="material-icons text-white p-2">logout</span>
+      </div>
+    </div>
+  </body>
+</html>
