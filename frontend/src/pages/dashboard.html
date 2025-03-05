@@ -3,150 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../styles/output.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet"/>
+    <!-- GOOGLE ICONS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <!-- CSS -->
+     <link rel="stylesheet" href="style.css">
+     <!-- SCRIPTS -->
     <script src="../js/sidebar.js" defer></script>
     <title>Dashboard</title>
   </head>
-  <body class="bg-neutral-800">
-    <header class="w-full">
-      <!-- MENU DESKTOP -->
-      <nav class="flex justify-between items-center w-full p-5 bg-zinc-900">
-        <div class="logo">
-          <h1 class="font-poppins font-semibold text-lg text-white">
-            HabitLife
-          </h1>
-        </div>
-
-        <button id="menu-btn" class="text-white text-3xl md:hidden">
-          <span id="menu-icon" class="material-icons">menu</span>
-        </button>
-
-        <ul class="hidden md:flex items-center space-x-4">
-          <li
-            class="font-poppins text-sm text-white hover:text-neutral-400 transition-all ease-in-out"
-          >
-            <a href="#">Dashboard</a>
-          </li>
-          <li
-            class="font-poppins text-sm text-white hover:text-neutral-400 transition-all ease-in-out"
-          >
-            <a href="#">Histórico</a>
-          </li>
-          <li
-            class="font-poppins text-sm text-white hover:text-neutral-400 transition-all ease-in-out"
-          >
-            <a href="#">Calendário</a>
-          </li>
-        </ul>
-
-        <div class="relative hidden md:flex items-center">
-        
-          <img
-          id="desktop-avatar"
-          src="/frontend/public/assets/Avatar.jpg"
-          alt="Avatar"
-          class="flex w-10 h-10 rounded-full cursor-pointer"
-          />          
-          <div
-            id="desktop-dropdown"
-            class="absolute right-0 top-full w-40 bg-neutral-600 shadow-md rounded-md hidden p-2 text-left"
-          >
-            <ul class="text-sm">
-              <li>
-                <a
-                  href="#"
-                  class="font-poppins block px-4 py-2 hover:bg-zinc-800 text-white rounded-md text-xs"
-                >
-                  Meu Perfil</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="font-poppins block px-4 py-2 hover:bg-zinc-800 text-white rounded-md text-xs"
-                >
-                  Notificações</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="font-poppins block px-4 py-2 hover:bg-zinc-800 text-white rounded-md text-xs"
-                  >Configurações</a
-                >
-              </li>
-              <li>
-                <a
-                  href="#"
-                  class="font-poppins block px-4 py-2 hover:bg-zinc-800 text-white rounded-md text-xs"
-                  >Sair</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-
-      <!-- MOBILE MENU  -->
-      <nav
-        id="mobile-menu"
-        class="absolute top-16 left-0 w-full h-screen bg-zinc-900 text-white flex flex-col space-y-4 p-4 opacity-0 pointer-events-none transform -translate-y-6 transition-all duration-500 ease-in-out md:hidden"
-      >
-        <a
-          href="#"
-          class="font-medium font-poppins text-xs hover:bg-zinc-500 p-2 rounded-md transition-all ease-in-out"
-          >Dashboard</a
-        >
-        <a
-          href="#"
-          class="font-medium font-poppins text-xs hover:bg-zinc-500 p-2 rounded-md transition-all ease-in-out"
-          >Histórico</a
-        >
-        <a
-          href="#"
-          class="font-medium font-poppins text-xs hover:bg-zinc-500 p-2 rounded-md  transition-all ease-in-out"
-          >Calendário</a
-        >
-        <div class="flex items-center relative p-2">
-
-          
-          <img
-          id="mobile-avatar"
-          src="/frontend/public/assets/Avatar.jpg"
-          alt="Avatar"
-          class="w-10 h-10 rounded-full cursor-pointer"
-          />
-          
-          <div
-            id="mobile-dropdown"
-            class="absolute left-0 top-full mt-2 w-40 bg-neutral-600 shadow-md rounded-md hidden p-1"
-          >
-            <a
-              href="#"
-              class="font-poppins text-xs block px-4 py-2 text-white hover:bg-zinc-800 rounded-md"
-              >Meu Perfil</a
-            >
-            <a
-              href="#"
-              class="font-poppins text-xs block px-4 py-2 text-white hover:bg-zinc-800 rounded-md"
-              >Notificações</a
-            >
-            <a
-              href="#"
-              class="font-poppins text-xs block px-4 py-2 text-white hover:bg-zinc-800 rounded-md"
-              >Configurações</a
-            >
-            <a
-              href="#"
-              class="font-poppins text-xs block px-4 py-2 text-white hover:bg-zinc-800 rounded-md"
-              >Sair</a
-            >
-          </div>
-        </div>
-      </nav>
-    </header>
+  <body>
+     <header class="header-container">
+          <nav class="nav-container">
+              <ul class="">
+                  
+              </ul>
+          </nav>
+     </header>
   </body>
 </html>
