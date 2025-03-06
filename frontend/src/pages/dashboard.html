@@ -7,18 +7,40 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <!-- CSS -->
-     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="../styles/sidebar.css">
+     <link rel="stylesheet" href="../styles/reset.css">
      <!-- SCRIPTS -->
-    <script src="../js/sidebar.js" defer></script>
+     <script src="../js/sidebar.js" defer></script>
     <title>Dashboard</title>
   </head>
   <body>
-     <header class="header-container">
-          <nav class="nav-container">
-              <ul class="">
-                  
-              </ul>
-          </nav>
-     </header>
+    <header class="header-container">
+      <nav id="nav-container">
+        <div class="logo">
+                   <a href="#"><img src="/frontend/public/assets/logo.png" alt=""></a>
+               </div>
+       
+          <button id="menu-icon" >
+              <span class="material-symbols-outlined">menu</span>
+          </button>
+          <ul id="nav-links">
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="#">Histórico</a></li>
+              <li><a href="#">Calendário</a></li>
+          </ul>
+      </nav>
+
+      <div id="avatar">
+          <span class="material-symbols-outlined">notifications</span>
+          <img src="/frontend/public/assets/Avatar.jpg" alt="avatar">
+          <div id="avatar-dropdown">
+              <a href="#">Meu Perfil</a>
+              <a href="#">Configurações</a>
+              <a href="#">Sair</a>
+          </div>
+      </div>
+  </header>
+  
+    
   </body>
 </html>
