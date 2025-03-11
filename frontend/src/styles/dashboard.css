@@ -1,0 +1,331 @@
+:root {
+  --color-primary: #1c1c1c;
+  --color-secundary: #313131;
+  --color-white: #ffff;
+  --color-green: #4caf50;
+  --color-yellow: #f8bd00;
+  --color-red: #e33629;
+  --color-blue: #0606af;
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.dashboard-container {
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.dashboard-title h1 {
+  color: var(--color-white);
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.dashboard-title p {
+  color: var(--color-white);
+}
+
+.dashboard-painels {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+#habits-painels {
+  width: 350px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  margin: 0 1rem;
+  border-radius: 5px;
+  color: var(--color-white);
+}
+
+#habits-painels h2 {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+#habits-painels p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.habit-completed {
+  background: var(--color-green);
+}
+
+.habit-to-completed {
+  background: var(--color-yellow);
+}
+
+.habit-not-completed {
+  background: var(--color-red);
+}
+
+.table-habits {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.habits-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-btn button {
+  background: transparent;
+  border: solid 1px var(--color-white);
+  color: var(--color-white);
+  width: 100px;
+  border-radius: 20px;
+  padding: 0.2rem;
+  margin: 0 0.5rem;
+  font-size: 12px;
+  transition: all 0.3s ease-in-out;
+}
+
+.filter-btn button:hover {
+  background: var(--color-secundary);
+}
+
+.habits-list-container {
+  scroll-behavior: smooth;
+  background: var(--color-secundary);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-height: 500px;
+  padding: 1rem 2rem;
+  margin: 2rem 0;
+  gap: 1rem;
+  border-radius: 10px;
+  overflow-y: auto;
+}
+
+.habits-list-container::-webkit-scrollbar {
+  width: 5px;
+  background: var(--color-red);
+}
+
+.habits-list-container::-webkit-scrollbar-track {
+  background: #555555;
+}
+
+.habits-list-container::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border: solid 1px #313131;
+  border-radius: 10px;
+}
+
+.habit-card {
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 0.8rem;
+  margin: 0.3rem 0;
+  width: 80%;
+}
+
+.card-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header .habit-config {
+  background: none;
+  border: none;
+  color: var(--color-white);
+}
+
+.habit-config span {
+  font-size: 25px;
+}
+
+.card-header h3 {
+  color: var(--color-white);
+  font-weight: 400;
+  margin: 0.2rem 0;
+  padding: 0.2rem 0;
+}
+
+.tags {
+  margin: 0.2rem 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tags .tag-card {
+  display: flex;
+  justify-content: center;
+  width: 80px;
+  border-radius: 15px;
+  font-size: 10px;
+  color: var(--color-white);
+  padding: 0.2rem;
+  margin-left: 0.5rem;
+}
+
+.tags .tag-card:nth-child(1) {
+  background: var(--color-red);
+}
+
+.tags .tag-card:nth-child(2) {
+  background: var(--color-blue);
+}
+
+.tags .tag-card:nth-child(3) {
+  background: var(--color-green);
+}
+
+.date {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+  font-weight: 300;
+  font-size: 12px;
+  color: var(--color-white);
+}
+
+.date .material-symbols-outlined {
+  font-size: 16px;
+  margin: 0 0.1rem;
+}
+
+.date span .data-text {
+  font-size: 12px;
+}
+
+.btn-add-habit {
+  margin: 0 auto;
+  width: 250px;
+  border: none;
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-add-habit:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: 1px solid #ffff;
+}
+
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 0;
+  }
+  .dashboard-painels {
+    margin: 0;
+  }
+
+  #habits-painels {
+    width: 200px;
+    margin: 0.5rem 0.5rem;
+  }
+}
+
+@media (max-width: 425px) {
+  .main-container {
+    padding: 0;
+  }
+
+  .dashboard-title {
+    margin-bottom: 0.5rem;
+  }
+
+  .dashboard-painels {
+    flex-direction: column;
+  }
+  .dashboard-title h1 {
+    font-size: 20px;
+  }
+  .dashboard-title p {
+    font-size: 12px;
+  }
+  #habits-painels {
+    margin: 0.5rem 0;
+  }
+
+  #habits-painels h2 {
+    font-size: 12px;
+  }
+
+  .filter-btn button {
+    margin: 0 0.2rem;
+    width: 80px;
+    font-size: 12px;
+  }
+
+  .habits-list-container {
+    padding: 1rem;
+    margin: 1rem 0;
+  }
+
+  .habit-card {
+    width: 100%;
+    padding: 0.5rem;
+  }
+
+  .card-header h3 {
+    font-size: 15px;
+  }
+
+  .tags .tag-card {
+    width: 50px;
+    border-radius: 15px;
+    font-size: 8px;
+  }
+
+  .btn-add-habit {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 375px) {
+  #habits-painels {
+    width: 300px;
+  }
+}
+
+@media (max-width: 320px) {
+  .header-container {
+    padding: 0 1rem;
+  }
+  #habits-painels {
+    width: 250px;
+  }
+}

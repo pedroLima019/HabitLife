@@ -3,44 +3,186 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FAVICON -->
+    <link
+      rel="shortcut icon"
+      href="/frontend/public/assets/logo.png"
+      type="image/x-icon"
+    />
     <!-- GOOGLE ICONS -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
     <!-- CSS -->
-     <link rel="stylesheet" href="../styles/sidebar.css">
-     <link rel="stylesheet" href="../styles/reset.css">
-     <!-- SCRIPTS -->
-     <script src="../js/sidebar.js" defer></script>
+    <link rel="stylesheet" href="../styles/sidebar.css" />
+    <link rel="stylesheet" href="../styles/dashboard.css" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <!-- SCRIPTS -->
+    <script src="../js/sidebar.js" defer></script>
     <title>Dashboard</title>
   </head>
   <body>
     <header class="header-container">
       <nav id="nav-container">
         <div class="logo">
-                   <a href="#"><img src="/frontend/public/assets/logo.png" alt=""></a>
-               </div>
-       
-          <button id="menu-icon" >
-              <span class="material-symbols-outlined">menu</span>
-          </button>
-          <ul id="nav-links">
-              <li><a href="#">Dashboard</a></li>
-              <li><a href="#">Histórico</a></li>
-              <li><a href="#">Calendário</a></li>
-          </ul>
-      </nav>
+          <a href="#"><img src="/frontend/public/assets/logo.png" alt="" /></a>
+        </div>
 
+        <button id="menu-icon">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <ul id="nav-links">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Histórico</a></li>
+          <li><a href="#">Calendário</a></li>
+        </ul>
+      </nav>
       <div id="avatar">
-          <span class="material-symbols-outlined">notifications</span>
-          <img src="/frontend/public/assets/Avatar.jpg" alt="avatar">
-          <div id="avatar-dropdown">
-              <a href="#">Meu Perfil</a>
-              <a href="#">Configurações</a>
-              <a href="#">Sair</a>
-          </div>
+        <span class="material-symbols-outlined">notifications</span>
+        <img src="/frontend/public/assets/Avatar.jpg" alt="avatar" />
+        <div id="avatar-dropdown">
+          <a href="#">Meu Perfil</a>
+          <a href="#">Configurações</a>
+          <a href="#">Sair</a>
+        </div>
       </div>
-  </header>
-  
-    
+    </header>
+    <main class="main-container">
+      <section class="dashboard-container">
+        <div class="dashboard-title">
+          <h1>Dashboard</h1>
+          <p>Monitore sua evolução</p>
+        </div>
+
+        <div class="dashboard-painels">
+          <div id="habits-painels" class="habit-completed">
+            <h2>Hábitos concluídos</h2>
+            <p id="number-habits">50</p>
+          </div>
+          <div id="habits-painels" class="habit-to-completed">
+            <h2>Hábitos á concluir</h2>
+            <p id="number-habits">100</p>
+          </div>
+          <div id="habits-painels" class="habit-not-completed">
+            <h2>Hábitos á concluir</h2>
+            <p id="number-habits">20</p>
+          </div>
+        </div>
+      </section>
+      <section class="table-habits">
+        <div class="habits-container">
+          <div class="filter-btn">
+            <button id="month">Mês</button>
+            <button id="week">Semana</button>
+            <button id="day">Dia</button>
+          </div>
+
+          <div class="habits-list-container">
+            <div class="habit-card">
+              <div class="card-header">
+                <h3>Name the Task</h3>
+                <button class="habit-config">
+                  <span class="material-symbols-outlined"> more_horiz </span>
+                </button>
+              </div>
+
+              <div class="tags">
+                <span class="tag-card">Dificil</span>
+                <span class="tag-card">Estudos</span>
+                <span class="tag-card">Concluído</span>
+              </div>
+
+              <div class="date">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <span class="date-text">09/03/2025</span>
+              </div>
+            </div>
+            <div class="habit-card">
+              <div class="card-header">
+                <h3>Name the Task</h3>
+                <button class="habit-config">
+                  <span class="material-symbols-outlined"> more_horiz </span>
+                </button>
+              </div>
+
+              <div class="tags">
+                <span class="tag-card">Dificil</span>
+                <span class="tag-card">Estudos</span>
+                <span class="tag-card">Concluído</span>
+              </div>
+
+              <div class="date">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <span class="date-text">09/03/2025</span>
+              </div>
+            </div>
+            <div class="habit-card">
+              <div class="card-header">
+                <h3>Name the Task</h3>
+                <button class="habit-config">
+                  <span class="material-symbols-outlined"> more_horiz </span>
+                </button>
+              </div>
+
+              <div class="tags">
+                <span class="tag-card">Dificil</span>
+                <span class="tag-card">Estudos</span>
+                <span class="tag-card">Concluído</span>
+              </div>
+
+              <div class="date">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <span class="date-text">09/03/2025</span>
+              </div>
+            </div>
+            <div class="habit-card">
+              <div class="card-header">
+                <h3>Name the Task</h3>
+                <button class="habit-config">
+                  <span class="material-symbols-outlined"> more_horiz </span>
+                </button>
+              </div>
+
+              <div class="tags">
+                <span class="tag-card">Dificil</span>
+                <span class="tag-card">Estudos</span>
+                <span class="tag-card">Concluído</span>
+              </div>
+
+              <div class="date">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <span class="date-text">09/03/2025</span>
+              </div>
+            </div>
+            <div class="habit-card">
+              <div class="card-header">
+                <h3>Name the Task</h3>
+                <button class="habit-config">
+                  <span class="material-symbols-outlined"> more_horiz </span>
+                </button>
+              </div>
+
+              <div class="tags">
+                <span class="tag-card">Dificil</span>
+                <span class="tag-card">Estudos</span>
+                <span class="tag-card">Concluído</span>
+              </div>
+
+              <div class="date">
+                <span class="material-symbols-outlined">calendar_month</span>
+                <span class="date-text">09/03/2025</span>
+              </div>
+            </div>
+          </div>
+          <button class="btn-add-habit">Adicionar Hábito</button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
