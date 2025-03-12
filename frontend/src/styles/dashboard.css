@@ -42,6 +42,7 @@
 }
 
 .dashboard-painels {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -245,15 +246,29 @@
 }
 
 @media (max-width: 768px) {
-  .dashboard-container {
-    padding: 0;
+  .main-container {
+    padding: 1rem;
   }
+
+  #nav-links {
+    top: 60px;
+  }
+
+  #nav-links li a {
+    margin: 0 1.2rem;
+    width: 90%;
+  }
+
+  .dashboard-container {
+    padding: 0 1rem;
+  }
+
   .dashboard-painels {
     margin: 0;
+    flex-wrap: nowrap;
   }
 
   #habits-painels {
-    width: 200px;
     margin: 0.5rem 0.5rem;
   }
 }
@@ -261,6 +276,19 @@
 @media (max-width: 425px) {
   .main-container {
     padding: 0;
+  }
+
+  .header-container {
+    padding: 0 1rem;
+  }
+
+  #avatar img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .dashboard-container {
+    padding: 0 1rem;
   }
 
   .dashboard-title {
@@ -277,6 +305,7 @@
     font-size: 12px;
   }
   #habits-painels {
+    width: 100%;
     margin: 0.5rem 0;
   }
 
@@ -316,16 +345,47 @@
 }
 
 @media (max-width: 375px) {
+  #nav-container {
+    width: 60%;
+  }
+
   #habits-painels {
     width: 300px;
+  }
+
+  .dashboard-container {
+    padding: 0;
+  }
+
+  .table-habits {
+    padding: 0.5rem;
   }
 }
 
 @media (max-width: 320px) {
   .header-container {
-    padding: 0 1rem;
+    padding: 0 0.8rem;
+  }
+
+  #nav-links {
+    top: 60px;
+    padding: 0rem 0;
+  }
+
+  #nav-links li a {
+    margin: 0;
+    font-size: 13px;
+  }
+
+  #menu-icon span {
+    font-size: 1.7rem;
   }
   #habits-painels {
     width: 250px;
+  }
+
+  #avatar img {
+    width: 35px;
+    height: 35px;
   }
 }
