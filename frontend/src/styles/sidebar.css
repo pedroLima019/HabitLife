@@ -88,18 +88,24 @@ body {
   position: absolute;
   right: 2.5rem;
   top: 65px;
-  padding: 0.8rem;
+  padding: 0.5rem;
   border-radius: 5px;
-  background: #313131;
+  background: var(--color-white);
 }
 
 #avatar-dropdown a {
   font-size: 13px;
-  margin: 5px 0px;
-  color: var(--color-white);
+  padding: 0.4rem;
+  border-radius: 5px;
+  color: var(--color-primary);
   opacity: 0;
   transform: translateY(10px);
   transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#avatar-dropdown a:hover {
+  background: #363636;
+  color: var(--color-white);
 }
 
 #avatar-dropdown.show {

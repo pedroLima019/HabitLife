@@ -5,7 +5,7 @@
   --color-green: #4caf50;
   --color-yellow: #f8bd00;
   --color-red: #e33629;
-  --color-blue: #0606af;
+  --color-blue: #0059ff;
 }
 
 .main-container {
@@ -39,6 +39,7 @@
 
 .dashboard-title p {
   color: var(--color-white);
+  font-size: 15px;
 }
 
 .dashboard-painels {
@@ -83,7 +84,7 @@
 }
 
 .habit-not-completed {
-  background: var(--color-red);
+  background: var(--color-blue);
 }
 
 .table-habits {
@@ -126,6 +127,7 @@
   justify-content: flex-start;
   align-items: center;
   width: 100%;
+  height: 400px;
   max-height: 500px;
   padding: 1rem 2rem;
   margin: 2rem 0;
@@ -154,7 +156,7 @@
   border-radius: 5px;
   padding: 0.8rem;
   margin: 0.3rem 0;
-  width: 80%;
+  width: 100%;
 }
 
 .card-header {
@@ -174,6 +176,40 @@
   font-size: 25px;
 }
 
+.menu-container {
+  position: relative;
+}
+
+.habit-menu {
+  position: absolute;
+  top: 100%;
+  width: 80px;
+  right: 0;
+  background: var(--color-white);
+  padding: 0.5rem;
+  margin: 0;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.habit-menu.hidden {
+  display: none;
+}
+
+.habit-menu li {
+  width: 100%;
+  padding: 0.2rem;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: 5px;
+  transition: all .3s ease-in-out;
+}
+
+.habit-menu li:hover {
+  background-color: #505050;
+  color: var(--color-white);
+}
+
 .card-header h3 {
   color: var(--color-white);
   font-weight: 400;
@@ -188,6 +224,12 @@
   align-items: center;
 }
 
+.categoria {
+  background-color: #5a5a5a;
+  color: white;
+  margin: 0 0.5rem;
+}
+
 .tags .tag-card {
   display: flex;
   justify-content: center;
@@ -199,16 +241,51 @@
   margin-left: 0.5rem;
 }
 
-.tags .tag-card:nth-child(1) {
-  background: var(--color-red);
+.tag-card.fácil {
+  background-color: var(--color-green);
+  color: #ffffff;
 }
 
-.tags .tag-card:nth-child(2) {
-  background: var(--color-blue);
+.tag-card.média {
+  background-color: var(--color-blue);
+  color: #ffffff;
 }
 
-.tags .tag-card:nth-child(3) {
-  background: var(--color-green);
+.tag-card.difícil {
+  background-color: var(--color-red);
+  color: #fff;
+  font-size: 12px;
+}
+
+.status-select {
+  text-align: center;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  transition: background-color 0.3s ease;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.status-select.pendente {
+  background-color: var(--color-yellow);
+  color: #ffffff;
+  font-size: 10px;
+}
+
+.status-select.emandamento {
+  background-color: var(--color-blue);
+  color: #ffffff;
+  font-size: 10px;
+}
+
+.status-select.concluido {
+  background-color: var(--color-green);
+  color: #ffffff;
+  font-size: 10px;
 }
 
 .date {
@@ -245,9 +322,106 @@
   border: 1px solid #ffff;
 }
 
+.grafic-container {
+  width: 100%;
+  height: 500px;
+  margin: 5rem 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.grafic-container h3 {
+  color: var(--color-white);
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.grafic-container p {
+  color: var(--color-white);
+  font-size: 15px;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+#myChart {
+  width: 100%;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000093;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.hidden {
+  display: none;
+}
+
+.modal {
+  background: var(--color-secundary);
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  color: var(--color-white);
+}
+
+.modal h2 {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.modal form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal input,
+.modal select {
+  padding: 0.2rem;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+}
+
+.buttons-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.buttons-modal button {
+  width: 100%;
+  padding: 0.3rem;
+  border: none;
+  margin: 0 10px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttons-modal button:hover {
+  background: #7c7a7a;
+  color: #ffffff;
+}
+
 @media (max-width: 768px) {
   .main-container {
-    padding: 1rem;
+    padding: 0;
   }
 
   #nav-links {
@@ -341,6 +515,18 @@
 
   .btn-add-habit {
     font-size: 10px;
+  }
+
+  .grafic-container {
+    margin: 2rem 0;
+  }
+
+  .grafic-container h3 {
+    font-size: 20px;
+  }
+
+  .grafic-container p {
+    font-size: 12px;
   }
 }
 

@@ -10,3 +10,4 @@ menuIcon.addEventListener("click", () => {
 avatar.addEventListener("click", () => {
   avatarDrop.classList.toggle("show");
 });
+

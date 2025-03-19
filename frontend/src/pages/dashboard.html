@@ -10,6 +10,10 @@
       href="/frontend/public/assets/logo.png"
       type="image/x-icon"
     />
+
+    <!-- CHART.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <!-- GOOGLE ICONS -->
     <link
       rel="stylesheet"
@@ -19,12 +23,17 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
     />
+
     <!-- CSS -->
     <link rel="stylesheet" href="../styles/sidebar.css" />
     <link rel="stylesheet" href="../styles/dashboard.css" />
     <link rel="stylesheet" href="../styles/reset.css" />
+
     <!-- SCRIPTS -->
     <script src="../js/sidebar.js" defer></script>
+    <script type="module" src="../js/chart.js"></script>
+    <script src="../js/dash.js" defer></script>
+
     <title>Dashboard</title>
   </head>
   <body>
@@ -62,16 +71,16 @@
 
         <div class="dashboard-painels">
           <div id="habits-painels" class="habit-completed">
-            <h2>Hábitos concluídos</h2>
-            <p id="number-habits">50</p>
+            <h2>Concluídos</h2>
+            <p id="completed-count">0</p>
           </div>
           <div id="habits-painels" class="habit-to-completed">
-            <h2>Hábitos á concluir</h2>
-            <p id="number-habits">100</p>
+            <h2>Pendente</h2>
+            <p id="pending-count">0</p>
           </div>
           <div id="habits-painels" class="habit-not-completed">
-            <h2>Hábitos á concluir</h2>
-            <p id="number-habits">20</p>
+            <h2>Em andamento</h2>
+            <p id="inprogress-count">0</p>
           </div>
         </div>
       </section>
@@ -83,106 +92,45 @@
             <button id="day">Dia</button>
           </div>
 
-          <div class="habits-list-container">
-            <div class="habit-card">
-              <div class="card-header">
-                <h3>Name the Task</h3>
-                <button class="habit-config">
-                  <span class="material-symbols-outlined"> more_horiz </span>
-                </button>
-              </div>
-
-              <div class="tags">
-                <span class="tag-card">Dificil</span>
-                <span class="tag-card">Estudos</span>
-                <span class="tag-card">Concluído</span>
-              </div>
-
-              <div class="date">
-                <span class="material-symbols-outlined">calendar_month</span>
-                <span class="date-text">09/03/2025</span>
-              </div>
-            </div>
-            <div class="habit-card">
-              <div class="card-header">
-                <h3>Name the Task</h3>
-                <button class="habit-config">
-                  <span class="material-symbols-outlined"> more_horiz </span>
-                </button>
-              </div>
-
-              <div class="tags">
-                <span class="tag-card">Dificil</span>
-                <span class="tag-card">Estudos</span>
-                <span class="tag-card">Concluído</span>
-              </div>
-
-              <div class="date">
-                <span class="material-symbols-outlined">calendar_month</span>
-                <span class="date-text">09/03/2025</span>
-              </div>
-            </div>
-            <div class="habit-card">
-              <div class="card-header">
-                <h3>Name the Task</h3>
-                <button class="habit-config">
-                  <span class="material-symbols-outlined"> more_horiz </span>
-                </button>
-              </div>
-
-              <div class="tags">
-                <span class="tag-card">Dificil</span>
-                <span class="tag-card">Estudos</span>
-                <span class="tag-card">Concluído</span>
-              </div>
-
-              <div class="date">
-                <span class="material-symbols-outlined">calendar_month</span>
-                <span class="date-text">09/03/2025</span>
-              </div>
-            </div>
-            <div class="habit-card">
-              <div class="card-header">
-                <h3>Name the Task</h3>
-                <button class="habit-config">
-                  <span class="material-symbols-outlined"> more_horiz </span>
-                </button>
-              </div>
-
-              <div class="tags">
-                <span class="tag-card">Dificil</span>
-                <span class="tag-card">Estudos</span>
-                <span class="tag-card">Concluído</span>
-              </div>
-
-              <div class="date">
-                <span class="material-symbols-outlined">calendar_month</span>
-                <span class="date-text">09/03/2025</span>
-              </div>
-            </div>
-            <div class="habit-card">
-              <div class="card-header">
-                <h3>Name the Task</h3>
-                <button class="habit-config">
-                  <span class="material-symbols-outlined"> more_horiz </span>
-                </button>
-              </div>
-
-              <div class="tags">
-                <span class="tag-card">Dificil</span>
-                <span class="tag-card">Estudos</span>
-                <span class="tag-card">Concluído</span>
-              </div>
-
-              <div class="date">
-                <span class="material-symbols-outlined">calendar_month</span>
-                <span class="date-text">09/03/2025</span>
-              </div>
-            </div>
-          </div>
-          <button class="btn-add-habit">Adicionar Hábito</button>
+          <div class="habits-list-container" id="habitList"></div>
+          <button class="btn-add-habit" id="btnAdd">Adicionar Hábito</button>
         </div>
       </section>
+      <section class="grafic-container">
+        <h3>Minha evolução</h3>
+        <p>acompanhe sua evolução</p>
+        <canvas
+          id="myChart"
+          width="500"
+          aria-label="Hello ARIA World"
+          role="img"
+        ></canvas>
+      </section>
     </main>
+
+    <!-- MODAL REGISTRO  -->
+    <div class="modal-overlay hidden" id="modal">
+      <div class="modal">
+        <h2>Adicionar novo Hábito</h2>
+        <form id="Habit-form">
+          <input type="text" placeholder="Nome da Tarefa" required />
+          <input type="date" required />
+
+          <select required>
+            <option value="" disabled selected>Selecione a Dificuldade</option>
+            <option value="Fácil">Fácil</option>
+            <option value="Média">Média</option>
+            <option value="Difícil">Difícil</option>
+          </select>
+
+          <input type="text" placeholder="Categoria (ex: Estudos)" required />
+
+          <div class="buttons-modal">
+            <button type="submit" id="add-modal">Salvar</button>
+            <button type="button" id="close-modal">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
