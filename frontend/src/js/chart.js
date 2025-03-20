@@ -1,66 +1,24 @@
 const ctx = document.getElementById("myChart");
 
-new Chart(ctx, {
-  type: "line",
+export const myChart = new Chart(ctx, {
+  type: "pie",
   data: {
-    labels: ["Tarefas"],
+    labels: ["Concluídas", "Pendentes", "Em andamento"],
     datasets: [
       {
-        label: "Concluídas",
-        data: [12],
-        backgroundColor: "rgba(0, 255, 0, 0.6)",
-        borderWidth: 1,
-      },
-      {
-        label: "Não concluídas",
-        data: [19],
-        backgroundColor: "rgb(255, 0, 0)",
-        borderWidth: 1,
-      },
-      {
-        label: "A concluir",
-        data: [3],
-        backgroundColor: "rgb(255, 230, 0)",
-        borderWidth: 1,
+        data: [0, 0, 0],
+        backgroundColor: [
+          "rgba(0, 255, 0, 0.6)",
+          "rgb(255, 238, 0)",
+          "rgb(3, 62, 255)",
+        ],
+        borderWidth: 0,
       },
     ],
   },
   options: {
-    animations: {
-      tension: {
-        duration: 1000,
-        easing: "linear",
-        from: 1,
-        to: 0,
-        loop: true,
-      },
-    },
     responsive: true,
     maintainAspectRatio: false,
-    scales: {
-      x: {
-        ticks: {
-          color: "white",
-          font: {
-            weight: "bold",
-          },
-        },
-        grid: {
-          color: "rgba(255, 255, 255, 0.2)",
-        },
-      },
-      y: {
-        ticks: {
-          color: "white",
-          font: {
-            weight: "bold",
-          },
-        },
-        grid: {
-          color: "rgba(255, 255, 255, 0.2)",
-        },
-      },
-    },
     plugins: {
       legend: {
         position: "bottom",
@@ -71,3 +29,8 @@ new Chart(ctx, {
     },
   },
 });
+
+export function updateChart(completed, pending, inProgress) {
+  myChart.data.datasets[0].data = [completed, pending, inProgress];
+  myChart.update();
+}

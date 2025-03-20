@@ -1,3 +1,5 @@
+import { updateChart } from "../js/chart.js";
+
 const btnAddHabit = document.getElementById("btnAdd");
 const modal = document.getElementById("modal");
 const btnClose = document.getElementById("close-modal");
@@ -89,6 +91,8 @@ function updateHabitPainels() {
   document.getElementById("completed-count").textContent = completed;
   document.getElementById("pending-count").textContent = pending;
   document.getElementById("inprogress-count").textContent = inProgress;
+
+  updateChart(completed, pending, inProgress);
 }
 
 // Cria um novo card com eventos
