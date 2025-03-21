@@ -96,7 +96,11 @@ function updateHabitPainels() {
 }
 
 // Cria um novo card com eventos
-function createCard({ name, date, difficulty, category }) {
+function createCard({ name, date, difficulty, category, startTime, endTime }) {
+
+  startTime = startTime || "00:00"
+  endTime = endTime || "00:00"
+
   const card = document.createElement("div");
   card.classList.add("habit-card");
 
@@ -128,6 +132,14 @@ function createCard({ name, date, difficulty, category }) {
     <div class="date">
       <span class="material-symbols-outlined">calendar_month</span>
       <span class="date-text">${formatDate(date)}</span>
+    </div>
+
+    <div class="time">
+      <label for="start-time-${name}">Início:</label>
+      <input type="time" id="start-time-${name}" value="${startTime}">
+      
+      <label for="end-time-${name}">Término:</label>
+      <input type="time" id="end-time-${name}" value="${endTime}">
     </div>
   `;
 
