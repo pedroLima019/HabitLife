@@ -217,11 +217,11 @@ body {
 }
 
 @media (max-width: 425px) {
+  .header-container {
+    padding: 0 1rem;
+  }
   #nav-container {
     flex-direction: row-reverse;
     width: 58%;
   }
-}
-
-@media (max-width: 375px) {
 }
