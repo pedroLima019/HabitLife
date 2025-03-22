@@ -1,0 +1,109 @@
+:root {
+  --color-primary: #1c1c1c;
+  --color-secundary: #313131;
+  --color-white: #ffff;
+  --color-green: #4caf50;
+  --color-yellow: #f8bd00;
+  --color-red: #e33629;
+  --color-blue: #0059ff;
+}
+
+.main-container {
+  width: 100%;
+  margin: 2rem 0;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#calendar {
+  width: 100%;
+  height: 600px;
+}
+.fc {
+  font-size: 12px;
+}
+
+.fc table {
+  border-collapse: collapse;
+  border-spacing: 0px;
+  font-size: 12px;
+}
+
+.fc .fc-toolbar-title {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin: 0px;
+  color: white;
+}
+
+.fc .fc-button-primary {
+  background-color: var(--color-secundary);
+  border: none;
+  color: #ffffff;
+}
+
+.fc .fc-button-primary:disabled {
+  background-color: var(--color-secundary);
+  border: none;
+  color: #ffffff;
+  transition: all 0.3s ease-in-out;
+}
+
+.fc .fc-button-primary:not(:disabled).fc-button-active,
+.fc .fc-button-primary:not(:disabled):active {
+  background-color: var(--color-blue);
+  border: none;
+  color: var(--color-white);
+}
+
+.fc .fc-button-primary:hover {
+  background: var(--color-blue);
+}
+
+.fc .fc-scrollgrid-liquid {
+  height: 100%;
+  color: white;
+}
+
+@media (max-width: 425px) {
+  .main-container {
+    margin: 0;
+  }
+
+  #calendar {
+    height: 530px;
+  }
+
+  .fc .fc-toolbar-title {
+    font-size: 1em;
+  }
+
+  .fc .fc-button-group {
+    width: 70px;
+    height: 30px;
+    font-size: 12px;
+  }
+  .fc .fc-button-primary:disabled {
+    width: 70px;
+    height: 30px;
+    font-size: 12px;
+  }
+
+  .fc-toolbar-chunk {
+    display: flex;
+    align-items: center;
+  }
+
+  .fc-toolbar-chunk:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (max-width: 320px) {
+  .main-container {
+    padding: 1rem;
+  }
+}

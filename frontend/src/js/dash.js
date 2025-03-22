@@ -8,7 +8,7 @@ const form = document.getElementById("Habit-form");
 
 let editingCard = null;
 
-// Ações de abrir e fechar modal
+
 btnAddHabit.addEventListener("click", () => modal.classList.remove("hidden"));
 btnClose.addEventListener("click", () => closeModal());
 
@@ -18,13 +18,13 @@ function closeModal() {
   editingCard = null;
 }
 
-// Utilitário para formatar data
+
 function formatDate(dateStr) {
   const [year, month, day] = dateStr.split("-");
   return `${day}/${month}/${year}`;
 }
 
-// Utilitário para atualizar a cor do status
+
 function updateStatusColor(select) {
   select.classList.remove("pendente", "emandamento", "concluido");
 
@@ -37,7 +37,7 @@ function updateStatusColor(select) {
   select.classList.add(status);
 }
 
-//Cria ou atualiza card
+
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -58,7 +58,7 @@ form.addEventListener("submit", (e) => {
   closeModal();
 });
 
-//Atualiza conteúdo do card existente
+
 function updateCard(card, { name, date, difficulty, category }) {
   card.querySelector("h3").textContent = name;
   card.querySelector(".date-text").textContent = formatDate(date);
@@ -68,7 +68,7 @@ function updateCard(card, { name, date, difficulty, category }) {
   tags[1].textContent = category;
 }
 
-// atualiza a contagem de hábitos
+
 function updateHabitPainels() {
   const selects = document.querySelectorAll(".status-select");
 
@@ -95,7 +95,7 @@ function updateHabitPainels() {
   updateChart(completed, pending, inProgress);
 }
 
-// Cria um novo card com eventos
+
 function createCard({ name, date, difficulty, category, startTime, endTime }) {
 
   startTime = startTime || "00:00"
@@ -147,7 +147,7 @@ function createCard({ name, date, difficulty, category, startTime, endTime }) {
   return card;
 }
 
-//Adiciona eventos ao card (editar, excluir, status)
+
 function addCardEvents(card) {
   const statusSelect = card.querySelector(".status-select");
   updateStatusColor(statusSelect);

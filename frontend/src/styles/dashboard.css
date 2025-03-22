@@ -415,9 +415,32 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .modal input,
 .modal select {
   padding: 0.2rem;
-  border: none;
+  border: solid 1px #fff;
+  color: var(--color-white);
   outline: none;
+  background: transparent;
   border-radius: 5px;
+}
+
+.modal option {
+  background-color: var(--color-secundary);
+}
+
+.modal input::placeholder {
+  color: var(--color-white);
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+  z-index: 1;
+}
+
+input[type="date"] {
+  position: relative;
+  color: white;
+  background: url('data:image/svg+xml;utf8,<svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.89-1.99 2L3 20c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V6c0-1.11-.9-2-2-2zm0 16H5V9h14v11z"/></svg>')
+    no-repeat right 10px center;
+  background-size: 15px 15px;
 }
 
 .buttons-modal {
@@ -428,7 +451,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 
 .buttons-modal button {
   width: 100%;
-  padding: 0.3rem;
+  padding: 0.2rem;
   border: none;
   margin: 0 10px;
   font-size: 12px;
@@ -437,9 +460,22 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   transition: all 0.3s ease-in-out;
 }
 
-.buttons-modal button:hover {
-  background: #7c7a7a;
-  color: #ffffff;
+.btnSave {
+  background-color: #4caf50;
+  color: var(--color-white);
+}
+
+.btnSave:hover {
+  background: #255227;
+}
+
+.btnCancel {
+  background-color: var(--color-red);
+  color: var(--color-white);
+}
+
+.btnCancel:hover {
+  background: #8a221a;
 }
 
 @media (max-width: 768px) {
@@ -540,6 +576,10 @@ input[type="time"]::-webkit-calendar-picker-indicator {
     font-size: 10px;
   }
 
+  .modal {
+    width: 80%;
+  }
+
   .grafic-container {
     margin: 2rem 0;
   }
@@ -596,5 +636,13 @@ input[type="time"]::-webkit-calendar-picker-indicator {
   #avatar img {
     width: 35px;
     height: 35px;
+  }
+
+  .modal {
+    padding: 1.2rem;
+  }
+
+  .modal h2 {
+    font-size: 17px;
   }
 }

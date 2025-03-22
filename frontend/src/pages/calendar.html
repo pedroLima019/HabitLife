@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- FAVICON -->
+    <link
+      rel="shortcut icon"
+      href="/frontend/public/assets/logo.png"
+      type="image/x-icon"
+    />
+
+    <!-- GOOGLE ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../styles/sidebar.css" />
+    <link rel="stylesheet" href="../styles/reset.css" />
+    <link rel="stylesheet" href="../styles/calendar.css" />
+
+    <!-- SCRIPTS -->
+    <script src="../js/sidebar.js" defer></script>
+    <script src="../js/calendar.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+
+    <title>Calendário</title>
+  </head>
+  <body>
+    <header class="header-container">
+      <nav id="nav-container">
+        <div class="logo">
+          <a href="#"><img src="/frontend/public/assets/logo.png" alt="" /></a>
+        </div>
+
+        <button id="menu-icon">
+          <span class="material-symbols-outlined">menu</span>
+        </button>
+        <ul id="nav-links">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Histórico</a></li>
+          <li><a href="#">Calendário</a></li>
+        </ul>
+      </nav>
+      <div id="avatar">
+        <span class="material-symbols-outlined">notifications</span>
+        <img src="/frontend/public/assets/Avatar.jpg" alt="avatar" />
+        <div id="avatar-dropdown">
+          <a href="#">Meu Perfil</a>
+          <a href="#">Configurações</a>
+          <a href="#">Sair</a>
+        </div>
+      </div>
+    </header>
+    <main class="main-container">
+     
+        <div id="calendar"></div>
+      </div>
+    </main>
+  </body>
+</html>
