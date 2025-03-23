@@ -135,6 +135,7 @@ body {
   .header-container {
     padding: 0 2rem;
   }
+
   #nav-container {
     flex-direction: row-reverse;
     width: 55%;
@@ -148,7 +149,7 @@ body {
     background: var(--color-primary);
     width: 100%;
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 0;
     padding: 1rem 0;
     transform: translateY(-10px);
@@ -192,7 +193,6 @@ body {
   #nav-links li a {
     display: block;
     padding: 1rem;
-    width: 98%;
     color: var(--color-white);
     transition: 0.3s;
   }
@@ -220,6 +220,11 @@ body {
   .header-container {
     padding: 0 1rem;
   }
+
+  .main-container {
+    padding: 1rem;
+  }
+
   #nav-container {
     flex-direction: row-reverse;
     width: 58%;
