@@ -8,69 +8,62 @@
   --color-blue: #0059ff;
 }
 
-.main-container {
-  width: 100%;
-  margin: 2rem 0;
-  padding: 2rem;
+.calendar-container {
   display: flex;
-  align-items: center;
   flex-direction: column;
   justify-content: center;
+  text-align: center;
+  width: 100%;
+  padding: 4rem;
+}
+
+.calendar-container h3 {
+  color: var(--color-white);
+  font-size: 40px;
+}
+
+.calendar-container p {
+  font-size: 15px;
+  color: var(--color-white);
 }
 
 #calendar {
   width: 100%;
   height: 600px;
-  z-index: -1;
-}
-.fc {
-  font-size: 12px;
-}
-
-.fc table {
-  border-collapse: collapse;
-  border-spacing: 0px;
-  font-size: 12px;
+  z-index: 1;
+  margin: 4rem 0;
 }
 
 .fc .fc-toolbar-title {
-  font-size: 1.5em;
-  font-weight: 600;
+  font-size: 1.2em;
   margin: 0px;
   color: white;
 }
 
-.fc .fc-button-primary {
-  background-color: var(--color-secundary);
-  border: none;
-  color: #ffffff;
+.fc .fc-scroller-harness {
+  color: rgb(255, 255, 255);
 }
 
-.fc .fc-button-primary:disabled {
-  background-color: var(--color-secundary);
-  border: none;
-  color: #ffffff;
-  transition: all 0.3s ease-in-out;
-}
-
-.fc .fc-button-primary:not(:disabled).fc-button-active,
-.fc .fc-button-primary:not(:disabled):active {
-  background-color: var(--color-blue);
-  border: none;
-  color: var(--color-white);
-}
-
-.fc .fc-button-primary:hover {
-  background: var(--color-blue);
-}
-
-.fc .fc-scrollgrid-liquid {
-  height: 100%;
+.fc .fc-scroller-liquid-absolute {
   color: white;
 }
 
+.fc .fc-button-primary {
+  background-color: var(--color-blue);
+  border-color: none;
+  color: var(--color-white);
+  font-size: 12px;
+}
+
+.fc .fc-button-primary:disabled {
+  background-color: #007fff;
+  border-color: none;
+  color: var(--color-white);
+}
+
 @media (max-width: 425px) {
-  .main-container {
+  .calendar-container {
+    padding: 2rem;
     margin: 0;
   }
 
@@ -78,33 +71,15 @@
     height: 530px;
   }
 
-  .fc .fc-toolbar-title {
-    font-size: 1em;
-  }
-
-  .fc .fc-button-group {
-    width: 70px;
-    height: 30px;
-    font-size: 12px;
-  }
-  .fc .fc-button-primary:disabled {
-    width: 70px;
-    height: 30px;
-    font-size: 12px;
-  }
-
-  .fc-toolbar-chunk {
-    display: flex;
-    align-items: center;
-  }
-
-  .fc-toolbar-chunk:nth-child(3) {
-    display: none;
-  }
+  .fc table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    font-size: 0.8em;
+}
 }
 
 @media (max-width: 320px) {
-  .main-container {
+  .calendar-container {
     padding: 1rem;
   }
 }

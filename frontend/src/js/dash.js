@@ -8,7 +8,6 @@ const form = document.getElementById("Habit-form");
 
 let editingCard = null;
 
-
 btnAddHabit.addEventListener("click", () => modal.classList.remove("hidden"));
 btnClose.addEventListener("click", () => closeModal());
 
@@ -18,12 +17,10 @@ function closeModal() {
   editingCard = null;
 }
 
-
 function formatDate(dateStr) {
   const [year, month, day] = dateStr.split("-");
   return `${day}/${month}/${year}`;
 }
-
 
 function updateStatusColor(select) {
   select.classList.remove("pendente", "emandamento", "concluido");
@@ -36,7 +33,6 @@ function updateStatusColor(select) {
 
   select.classList.add(status);
 }
-
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -58,7 +54,6 @@ form.addEventListener("submit", (e) => {
   closeModal();
 });
 
-
 function updateCard(card, { name, date, difficulty, category }) {
   card.querySelector("h3").textContent = name;
   card.querySelector(".date-text").textContent = formatDate(date);
@@ -67,7 +62,6 @@ function updateCard(card, { name, date, difficulty, category }) {
   tags[0].className = `tag-card ${difficulty.toLowerCase()}`;
   tags[1].textContent = category;
 }
-
 
 function updateHabitPainels() {
   const selects = document.querySelectorAll(".status-select");
@@ -94,7 +88,6 @@ function updateHabitPainels() {
 
   updateChart(completed, pending, inProgress);
 }
-
 
 function createCard({ name, date, difficulty, category, startTime, endTime }) {
 
@@ -146,7 +139,6 @@ function createCard({ name, date, difficulty, category, startTime, endTime }) {
   addCardEvents(card);
   return card;
 }
-
 
 function addCardEvents(card) {
   const statusSelect = card.querySelector(".status-select");

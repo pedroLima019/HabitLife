@@ -27,12 +27,14 @@
     <!-- CSS -->
     <link rel="stylesheet" href="../styles/sidebar.css" />
     <link rel="stylesheet" href="../styles/dashboard.css" />
+    <link rel="stylesheet" href="../styles/calendar.css" />
     <link rel="stylesheet" href="../styles/reset.css" />
 
     <!-- SCRIPTS -->
     <script src="../js/sidebar.js" defer></script>
     <script type="module" src="../js/chart.js" defer></script>
     <script type="module" src="../js/dash.js" defer></script>
+    <script type="module" src="../js/calendar.js" defer></script>
 
     <title>Dashboard</title>
   </head>
@@ -47,8 +49,8 @@
           <span class="material-symbols-outlined">menu</span>
         </button>
         <ul id="nav-links">
-          <li><a href="#">Dashboard</a></li>
           <li><a href="#">Histórico</a></li>
+          <li><a href="#">Dashboard</a></li>
           <li><a href="#">Calendário</a></li>
         </ul>
       </nav>
@@ -65,7 +67,7 @@
     <main class="main-container">
       <section class="dashboard-container">
         <div class="dashboard-title">
-          <h1>Dashboard</h1>
+          <h1>Histórico</h1>
           <p>Monitore sua evolução</p>
         </div>
 
@@ -97,7 +99,7 @@
         </div>
       </section>
       <section class="grafic-container">
-        <h3>Minha evolução</h3>
+        <h3>Dashboard</h3>
         <p>acompanhe sua evolução</p>
         <canvas
           id="myChart"
@@ -105,6 +107,12 @@
           aria-label="Hello ARIA World"
           role="img"
         ></canvas>
+      </section>
+
+      <section class="calendar-container">
+        <h3>Calendário</h3>
+        <p>Visualize seus hábitos</p>
+        <div id="calendar"></div>
       </section>
     </main>
 
@@ -127,10 +135,13 @@
 
           <div class="buttons-modal">
             <button type="submit" id="add-modal" class="btnSave">Salvar</button>
-            <button type="button" id="close-modal" class="btnCancel">Cancelar</button>
+            <button type="button" id="close-modal" class="btnCancel">
+              Cancelar
+            </button>
           </div>
         </form>
       </div>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
   </body>
 </html>
