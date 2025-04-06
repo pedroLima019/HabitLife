@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     windowResize: function () {
       calendar.setOption("headerToolbar", getHeaderToolbar());
     },
+    events: [],
   });
-
   calendar.render();
 });
