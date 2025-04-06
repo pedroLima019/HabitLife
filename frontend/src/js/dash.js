@@ -1,4 +1,13 @@
 import { updateChart } from "../js/chart.js";
+import {
+  initCalendar,
+  addHabitCalendar,
+  removeHabitCalendar,
+} from "./calendar.js";
+
+document.addEventListener("DOMContentLoaded", () => {
+  initCalendar();
+});
 
 const btnAddHabit = document.getElementById("btnAdd");
 const modal = document.getElementById("modal");
@@ -61,6 +70,13 @@ function updateCard(card, { name, date, difficulty, category }) {
   tags[0].textContent = difficulty;
   tags[0].className = `tag-card ${difficulty.toLowerCase()}`;
   tags[1].textContent = category;
+
+  const id = card.dataset.eventId;
+  const startTimeInput = card.querySelector("Input[type= 'time']");
+  const startTime = startTimeInput ? startTimeInput.value : "00:00";
+
+  removeHabitCalendar(id);
+  addHabitCalendar({ name, date, category, startTime, id });
 }
 
 function updateHabitPainels() {
@@ -90,12 +106,14 @@ function updateHabitPainels() {
 }
 
 function createCard({ name, date, difficulty, category, startTime, endTime }) {
-
-  startTime = startTime || "00:00"
-  endTime = endTime || "00:00"
+  startTime = startTime || "00:00";
+  endTime = endTime || "00:00";
 
   const card = document.createElement("div");
   card.classList.add("habit-card");
+
+  const id = `habit-${Date.now()}`;
+  card.dataset.eventId = id;
 
   card.innerHTML = `
     <div class="card-header">
@@ -135,6 +153,8 @@ function createCard({ name, date, difficulty, category, startTime, endTime }) {
       <input type="time" id="end-time-${name}" value="${endTime}">
     </div>
   `;
+
+  addHabitCalendar({ name, date, category, startTime, id });
 
   addCardEvents(card);
   return card;
