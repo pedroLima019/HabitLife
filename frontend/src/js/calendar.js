@@ -21,7 +21,7 @@ export function initCalendar() {
 
   calendar = new FullCalendar.Calendar(calendarEl, {
     locale: "pt-br",
-    initialView: "dayGridMonth",
+    initialView: "dayGridWeek",
     headerToolbar: getHeaderToolbar(),
     windowResize: function () {
       calendar.setOption("headerToolbar", getHeaderToolbar());

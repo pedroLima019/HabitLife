@@ -115,6 +115,8 @@ function createCard({ name, date, difficulty, category, startTime, endTime }) {
   const id = `habit-${Date.now()}`;
   card.dataset.eventId = id;
 
+  addHabitCalendar({ name, date, category, startTime, id });
+  
   card.innerHTML = `
     <div class="card-header">
       <h3>${name}</h3>
@@ -153,8 +155,6 @@ function createCard({ name, date, difficulty, category, startTime, endTime }) {
       <input type="time" id="end-time-${name}" value="${endTime}">
     </div>
   `;
-
-  addHabitCalendar({ name, date, category, startTime, id });
 
   addCardEvents(card);
   return card;
