@@ -299,34 +299,25 @@
 
 .date .material-symbols-outlined {
   font-size: 16px;
-  margin: 0 0.1rem;
+  margin: 0 5px;
 }
 
-.date span .data-text {
-  font-size: 12px;
+.date .date-text {
+  font-size: 15px;
 }
 
-.time {
+.horarios {
+  display: flex;
+  align-items: center;
   color: var(--color-white);
 }
-
-.time label {
-  font-size: 12px;
+.horarios .material-symbols-outlined {
+  font-size: 16px;
+  margin: 0 5px;
 }
 
-.time input {
-  cursor: pointer;
-  margin-right: 0.2rem;
-  background: none;
-  border: none;
-  border-bottom: solid 1px #fff;
-  padding: 0.1rem;
-  outline: none;
-  color: var(--color-white);
-}
-
-input[type="time"]::-webkit-calendar-picker-indicator {
-  display: none;
+.horarios .horario-text {
+  font-size: 15px;
 }
 
 .btn-add-habit {
@@ -409,17 +400,21 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 .modal form {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 5px;
 }
 
 .modal input,
 .modal select {
-  padding: 0.2rem;
-  border: solid 1px #fff;
+  padding: 0.3rem;
+  border: solid 1px #4e4d4d;
   color: var(--color-white);
   outline: none;
   background: transparent;
-  border-radius: 5px;
+  border-radius: 2px;
+}
+
+.modal label {
+  font-size: 13px;
 }
 
 .modal option {
@@ -427,7 +422,7 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 
 .modal input::placeholder {
-  color: var(--color-white);
+  color: gray;
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -437,7 +432,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 input[type="date"] {
   position: relative;
-  color: white;
+  color: gray;
   background: url('data:image/svg+xml;utf8,<svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.89-1.99 2L3 20c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V6c0-1.11-.9-2-2-2zm0 16H5V9h14v11z"/></svg>')
     no-repeat right 10px center;
   background-size: 15px 15px;
@@ -451,9 +446,9 @@ input[type="date"] {
 
 .buttons-modal button {
   width: 100%;
-  padding: 0.2rem;
+  padding: 0.5rem;
   border: none;
-  margin: 0 10px;
+  margin: 10px 5px;
   font-size: 12px;
   font-weight: 500;
   border-radius: 5px;
@@ -496,6 +491,10 @@ input[type="date"] {
     padding: 0 1rem;
   }
 
+  .dashboard-title h1 {
+    font-size: 30px;
+  }
+
   .dashboard-painels {
     margin: 0;
     flex-wrap: nowrap;
@@ -503,6 +502,19 @@ input[type="date"] {
 
   #habits-painels {
     margin: 0.5rem 0.5rem;
+  }
+
+  .habits-list-container {
+    margin: 1rem 0;
+  }
+
+  .grafic-container {
+    margin: 3rem 0;
+  }
+
+  .grafic-container h3 {
+    margin-bottom: 1rem;
+    font-size: 35px;
   }
 }
 
@@ -532,7 +544,7 @@ input[type="date"] {
     flex-direction: column;
   }
   .dashboard-title h1 {
-    font-size: 20px;
+    font-size: 25px;
   }
   .dashboard-title p {
     font-size: 12px;
@@ -581,11 +593,11 @@ input[type="date"] {
   }
 
   .grafic-container {
-    margin: 2rem 0;
+    margin: 1rem 0;
   }
 
   .grafic-container h3 {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .grafic-container p {

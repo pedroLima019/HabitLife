@@ -50,12 +50,28 @@ form.addEventListener("submit", (e) => {
   const date = form.querySelector("input[type='date']").value;
   const difficulty = form.querySelector("select").value;
   const category = document.querySelectorAll("input[type='text']")[1].value;
+  const startTime = document.getElementById("start-time-modal").value;
+  const endTime = document.getElementById("end-time-modal").value;
 
   if (editingCard) {
-    updateCard(editingCard, { name, date, difficulty, category });
+    updateCard(editingCard, {
+      name,
+      date,
+      difficulty,
+      category,
+      startTime,
+      endTime,
+    });
     updateHabitPainels();
   } else {
-    const newCard = createCard({ name, date, difficulty, category });
+    const newCard = createCard({
+      name,
+      date,
+      difficulty,
+      category,
+      startTime,
+      endTime,
+    });
     habitList.appendChild(newCard);
     updateHabitPainels();
   }
@@ -116,7 +132,7 @@ function createCard({ name, date, difficulty, category, startTime, endTime }) {
   card.dataset.eventId = id;
 
   addHabitCalendar({ name, date, category, startTime, id });
-  
+
   card.innerHTML = `
     <div class="card-header">
       <h3>${name}</h3>
@@ -146,14 +162,13 @@ function createCard({ name, date, difficulty, category, startTime, endTime }) {
       <span class="material-symbols-outlined">calendar_month</span>
       <span class="date-text">${formatDate(date)}</span>
     </div>
+    
+  <div class="horarios">
+    <span class="material-symbols-outlined">schedule</span>
+    <span class="horario-text">${startTime} - ${endTime}</span>
+  </div>
+  
 
-    <div class="time">
-      <label for="start-time-${name}">Início:</label>
-      <input type="time" id="start-time-${name}" value="${startTime}">
-      
-      <label for="end-time-${name}">Término:</label>
-      <input type="time" id="end-time-${name}" value="${endTime}">
-    </div>
   `;
 
   addCardEvents(card);

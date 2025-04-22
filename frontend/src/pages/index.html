@@ -80,12 +80,6 @@
       </section>
       <section class="table-habits">
         <div class="habits-container">
-          <div class="filter-btn">
-            <button id="month">Mês</button>
-            <button id="week">Semana</button>
-            <button id="day">Dia</button>
-          </div>
-
           <div class="habits-list-container" id="habitList"></div>
           <button class="btn-add-habit" id="btnAdd">Adicionar Hábito</button>
         </div>
@@ -111,17 +105,28 @@
       <div class="modal">
         <h2>Adicionar novo Hábito</h2>
         <form id="Habit-form">
-          <input type="text" placeholder="Nome da Tarefa" required />
-          <input type="date" required />
+           <label for="Name">Nome tarefa:</label>
+          <input type="text" id="name" placeholder="Escreva o nome da tarefa" required />
+          <label for="date">Data tarefa:</label>
+          <input type="date" id="date" required />
 
-          <select required>
+
+          <label for="difficulty">Dificuldade tarefa:</label>
+          <select id="difficulty" name="difficulty" required>
             <option value="" disabled selected>Selecione a Dificuldade</option>
             <option value="Fácil">Fácil</option>
             <option value="Média">Média</option>
             <option value="Difícil">Difícil</option>
           </select>
 
-          <input type="text" placeholder="Categoria (ex: Estudos)" required />
+          <label for="task">Categoria:</label>
+          <input type="text" id="task" placeholder="Categoria (ex: Estudos)" required />
+
+          <label for="start-time-modal">Horário de início:</label>
+          <input type="time" id="start-time-modal" required>
+
+          <label for="end-time-modal">Horário de término:</label>
+          <input type="time" id="end-time-modal" required>
 
           <div class="buttons-modal">
             <button type="submit" id="add-modal" class="btnSave">Salvar</button>
