@@ -18,15 +18,10 @@ O **Habit Tracker** é um aplicativo desenvolvido para ajudar os usuários a ger
 - Acompanhamento do **histórico** de hábitos completados.
 - Função para **editar e excluir hábitos**.
 
-### 🔹 2. Notificações e Lembretes
+### 🔹 2. Dashboard e Estatísticas
 
-- Configuração de **lembretes** por notificação ou e-mail.
-- Envio de **relatórios semanais** com estatísticas de progresso.
-
-### 🔹 3. Dashboard e Estatísticas
-
-- Exibição de um **gráfico de desempenho**, destacando hábitos concluídos e metas atingidas.
-- Análise da **porcentagem de hábitos concluídos** por período.
+- Exibição de um **gráfico de desempenho**
+- Análise da **porcentagem de hábitos concluídos**
 - Identificação dos hábitos mais cumpridos.
 
 ---
