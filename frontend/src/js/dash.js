@@ -7,6 +7,18 @@ import {
 
 document.addEventListener("DOMContentLoaded", () => {
   initCalendar();
+
+  const habitSave = JSON.parse(localStorage.getItem("habitosDash")) || [];
+
+  habitSave.forEach((h) => {
+    const card = createCard(h);
+    habitList.appendChild(card);
+    const select = card.querySelector(".status-select");
+    select.value = h.status;
+    updateStatusColor(select);
+  });
+
+  updateHabitPainels();
 });
 
 const btnAddHabit = document.getElementById("btnAdd");
@@ -63,6 +75,7 @@ form.addEventListener("submit", (e) => {
       endTime,
     });
     updateHabitPainels();
+    saveStorage();
   } else {
     const newCard = createCard({
       name,
@@ -74,6 +87,7 @@ form.addEventListener("submit", (e) => {
     });
     habitList.appendChild(newCard);
     updateHabitPainels();
+    saveStorage();
   }
 
   closeModal();
@@ -182,6 +196,7 @@ function addCardEvents(card) {
   statusSelect.addEventListener("change", function () {
     updateStatusColor(this);
     updateHabitPainels();
+    saveStorage();
   });
 
   const configBtn = card.querySelector(".habit-config");
@@ -201,6 +216,7 @@ function addCardEvents(card) {
   deleteBtn.addEventListener("click", () => {
     card.remove();
     updateHabitPainels();
+    saveStorage();
   });
 
   editBtn.addEventListener("click", () => {
@@ -221,4 +237,38 @@ function addCardEvents(card) {
     editingCard = card;
     modal.classList.remove("hidden");
   });
+}
+
+function saveStorage() {
+  const cards = document.querySelectorAll(".habit-card");
+  const habitos = [];
+
+  cards.forEach((card) => {
+    const name = card.querySelector("h3").textContent;
+    const date = card
+      .querySelector(".date-text")
+      .textContent.split("/")
+      .reverse()
+      .join("-");
+    const difficulty = card.querySelectorAll(".tag-card")[0].textContent;
+    const category = card.querySelectorAll(".tag-card")[1].textContent;
+    const horario = card.querySelector(".horario-text").textContent;
+    const [startTime, endTime] = horario.split(" - ");
+    const id = card.dataset.eventId;
+    const status = card.querySelector(".status-select").value;
+    console.log(status);
+
+    habitos.push({
+      name,
+      date,
+      difficulty,
+      category,
+      startTime,
+      endTime,
+      id,
+      status,
+    });
+  });
+
+  localStorage.setItem("habitosDash", JSON.stringify(habitos));
 }

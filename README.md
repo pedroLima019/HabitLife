@@ -34,19 +34,3 @@ O **Habit Tracker** é um aplicativo desenvolvido para ajudar os usuários a ger
 - CSS3
 - JavaScript
 
-### 🖥️ Backend
-
-- Node.js
-- Express.js
-- PostgreSQL
-
----
-
-## 🏁 **Como Rodar o Projeto Localmente**
-
-### 1. Clone o repositório
-
-```bash
-git clone https://github.com/seu-usuario/habit-tracker.git
-
-```
