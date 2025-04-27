@@ -49,9 +49,9 @@
           <span class="material-symbols-outlined">menu</span>
         </button>
         <ul id="nav-links">
-          <li><a href="#">Histórico</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Calendário</a></li>
+          <li><a href="#Histórico">Histórico</a></li>
+          <li><a href="#Dashboard">Dashboard</a></li>
+          <li><a href="#Calendario">Calendário</a></li>
         </ul>
       </nav>
     
@@ -60,10 +60,10 @@
     <main class="main-container">
       <section class="dashboard-container">
         <div class="dashboard-title">
-          <h1>Histórico</h1>
+          <h1 id="Histórico">Histórico</h1>
         </div>
 
-        <div class="dashboard-painels">
+        <div class="dashboard-painels" >
           <div id="habits-painels" class="habit-completed">
             <h2>Concluídos</h2>
             <p id="completed-count">0</p>
@@ -85,7 +85,7 @@
         </div>
       </section>
       <section class="grafic-container">
-        <h3>Dashboard</h3>
+        <h3 id="Dashboard">Dashboard</h3>
         <canvas
           id="myChart"
           width="500"
@@ -95,7 +95,7 @@
       </section>
 
       <section class="calendar-container">
-        <h3>Calendário</h3>
+        <h3 id="Calendario">Calendário</h3>
         <div id="calendar"></div>
       </section>
     </main>

@@ -366,6 +366,7 @@
 
 .modal-overlay {
   position: fixed;
+  padding: 1rem;
   top: 0;
   left: 0;
   width: 100%;
@@ -405,7 +406,8 @@
 
 .modal input,
 .modal select {
-  padding: 0.3rem;
+  padding: 0.2rem;
+  font-size: 12px;
   border: solid 1px #4e4d4d;
   color: var(--color-white);
   outline: none;
@@ -422,7 +424,7 @@
 }
 
 .modal input::placeholder {
-  color: gray;
+  color: rgb(255, 255, 255);
 }
 
 input[type="date"]::-webkit-calendar-picker-indicator {
@@ -432,10 +434,15 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 input[type="date"] {
   position: relative;
-  color: gray;
+  color: rgb(255, 255, 255);
   background: url('data:image/svg+xml;utf8,<svg fill="white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.89-1.99 2L3 20c0 1.1.89 2 1.99 2H19c1.1 0 2-.9 2-2V6c0-1.11-.9-2-2-2zm0 16H5V9h14v11z"/></svg>')
     no-repeat right 10px center;
   background-size: 15px 15px;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  color: var(--color-white);
+  display: none;
 }
 
 .buttons-modal {
@@ -485,6 +492,10 @@ input[type="date"] {
   #nav-links li a {
     margin: 0 1.2rem;
     width: 90%;
+  }
+
+  .modal {
+    padding: 1rem;
   }
 
   .dashboard-container {
@@ -656,5 +667,9 @@ input[type="date"] {
 
   .modal h2 {
     font-size: 17px;
+  }
+
+  .modal-overlay {
+    padding: 0rem;
   }
 }
